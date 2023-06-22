@@ -1,3 +1,3 @@
 # website
-Building a personal website with the help of html5up.net
+Building a personal website using templates + modifications from html5up.net
 
