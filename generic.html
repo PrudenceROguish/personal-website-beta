@@ -52,9 +52,304 @@
 						<div class="inner">
 							<h1>Generic Page</h1>
 							<span class="image main"><img src="images/pic13.jpg" alt="" /></span>
-							<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel venenatis mauris vehicula hendrerit.</p>
-							<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+							<p>##########################
+Improve Software development life cycle with devops - Day 2
+##########################
+
+
+Software development life cycle includes the following -
+planning
+define
+design
+building - devops
+testing - devops
+deploy - devops
+
+------------------------------------------
+building - 
+next task would be for the developers to write the application using their favourite language/code , he will read the jira items and began writing the code and push this to a common repository (for eg - git) 
+
+testing - what happens in the testing phase is that what is stored in the git repo by the developers is being taken and deployed in a server , which is then followed up by the QA TEam
+
+deployment - finally it is being pushed to the production server ater being QA'
+------------------------------------------
+DEVOPS ENGINEER COMES INTO PICTURE BY AUTOMATING THE LAST 3 PROCESSES ( BUILDING TESTING DEPLOYMENT) 
+WHICH IN TURN INCREASES EFFICIENCY AND REDUCES MANUAL INTERVENTION
+------------------------------------------
+As a devops engineer, you need to evaluate and think whether a particular software is right fit for your organization or not
+
+
+</p>
+							<p>##########################
+Virtual Server - Day 3
+##########################
+
+- bought the physical server from HP/IBM etc
+- now install hypervisor on it
+- then create multiple servers from it, in that way you can give out servers to your teammates instead of using the entire physical server to a single member
+- those created servers out of the physical server can be called as virtual machines
+- one VM is not depending on other vm
+- popular hypervisors are VMWare, Xen, etc 
+
+- AWS, GCP, Azure have created RACKS and put in Physical machines and all the hypervisors installed in physical machines inside the data centres and whenever you request for a EC2 Instance or virtual machine, these hypervisors will give you a machine out of the physical machines</p>
+							<p>#####################
+Virtual machine s- Part 2 AWS & Azure - How to Create Virtual Machines  - Day 4
+#####################
+
+login to aws console or microsoft azeure portal and request a virtual machine
+
+- however to increase efficiency, if we need to create 100 virtual machines, we cant do that through going to the console 100 times and create virtual machines 
+- we need to use AWS API (Specifically AWS EC2 API) if you want to create buckets (then AWS S3 BUCKETS API) if volumes (then aws ebi block api) and so on 
+- using the api we can write a script and create the virtual machines without logging into the aws console multiple times 
+
+#######################
+script
+#######################
+the script can be through multiple types 
+AWS CLI
+AWS API (BOFO3 - PYTHON MODULE)
+AWS CFT (CLOUD FORMATION TEMPLATE)
+TERRAFORM - the organisations are using hybrid pattern (like on premise and aws,etc)
+AWS CDK ( CLOUD DEVELOPMENT KIT)
+
+
+#######################
+create aws sc2 instance
+#######################
+
+after you create the ec2 instance make sure you create the key pair and save it locally</p>
+<p>
+	#####################
+Day-5 | AWS CLI Full Guide | How to connect to EC2 Instance from UI & Terminal | AWS CFT walk though
+#####################
+connect to a ec2 instance through the local terminal
+
+
+- open a terminal
+- copy the public IP address (the private ip address can only be used within the aws network)
+- ssh -i location (-i stands for identify)
+- set permissions for the .pem file (chmod 600 pem_file_location)
+
+#####################
+AWS CLI
+#####################
+
+download AWS CLI
+can be download on macos, windows or linux
+
+verify on if the aws vli is installed or not can be checked by typing in "aws version" after installing the aws cli
+
+next thing would be to authenticate the aws account with the installed aws cli
+
+create access key from the aws console under the profile name AND SECURITY CREDENTIALS
+
+to configure the aws cli with your account type in "aws configure" and then perform the on screen instructions
+
+aws cli will help your retrieve your data on aws console without logging in to the aws console, 
+
+commands to create and retrieve data through aws cli can be found from here  https://docs.aws.amazon.com/cli/latest/reference/
+
+#####################
+AWS CLOUD FORMATION TEMPLATE
+#####################
+
+AWS CLOUD FORMATION TEMPLATE is another way of talking to the aws API,  https://github.com/awslabs/aws-cloudformation-templates/tree/master/aws/services
+ for example to create an EC2 instance this template can be used - https://github.com/awslabs/aws-cloudformation-templates/tree/master/aws/services/EC2
+ or "CFT" can be searched through aws services search services
+ 
+#####################
+shell scripting to talk wth AWS API
+#####################
+
+PYTHON can be used to write automated scripts to create ec2 instance or query something from the aws console, etc.
+for python, BOTO3 Module is widely used https://boto3.amazonaws.com/v1/documentation/api/latest/index.html
+</p>
+
+<p>
+	######################################
+Day-6 | Linux & Shell Scripting | Complete Shell Scripting 
+######################################
+
+what is operating system?
+operating system acts as a medium of communication between hardware and software
+
+linux OS ARCHITECTURE
+            |
+SYSTEM SOFTWARE | USER PROCESSES | COMPILERS
+SYSTEM LIBRARIES
+KERNEL
+
+KERNEL is the heart of the operating system and has 4 management responsibilities
+- device management
+- memory management
+- process management
+- handling system calls
+
+system libraries - basically reponsible for performing a task , eg - libc is a system library
+
+######################################
+fundamentals of shell scripting
+######################################
+
+shell is a way you talk to the operating system through the shell commands
+
+- popular shell commands
+bash is the most popular one
+ls
+pwd
+cd
+cd .. ---------one directory
+cd../.. ------two directory up
+ls -ltr  ---if starts with d then it is a directory, if doesnt start with d then it is a file
+vi test ---test can be the file name created and you can start editing right away (colon wq) to exit vim
+:wq
+mkdir
+rm ---remove file
+rm -r -----remove directory
+free -g   -------to check memory usage and stuffs
+nproc  --- to check number of cpu processors
+df -h   ----to check the disk size
+top   -----to check all of the above in a single commands
+
+https://www.youtube.com/playlist?list=PLdpzxOOAlwvIZ7u-gtpX_bozrspUbTQ1S - refer this playlist for shell scripting in devops videos
+</p>
+							
+<p>
+	#####################################
+Day-7 | Live AWS Project using SHELL SCRIPTING for DevOps | AWS DevOps project
+#####################################
+primary reason to move to cloud
+
+- Moving applications to the cloud simplifies internal IT because now server, storage and operating system software doesn't need to be installed locally. It also doesn't require the maintenance and upgrades that on-premise applications need.
+
+- as a devops engineer, your task is also to track the resource usage and be cost efficient because this is one of the primary reason we moved to cloud
+
+- a cronjob can be implemented to the scripts(powershell or python) to fetch reports of daily aws resource usage to the reporting dashboards to pass it onto th maanager
+
+- we will write a shell script and integrate with a cronjob to let the script run at that particulat point of time everyday
+
+https://www.youtube.com/watch?v=gx5E47R9fGk&list=PLdpzxOOAlwvIKMhk8WhzN1pYoJ1YU8Csa&index=8&t=2s
+
+###############
+script see down - this script will generate aws resource usage report for us evryday
+
+
+vim aws_resource_tracker.sh
+
+#!/bin/bash
+
+#################################
+# Author: Priyojit
+# Date: 12th june
+#
+# Version:v1
+#
+# this script will report the aws resource usage
+#################################
+
+# AWS S3
+# AWS EC2
+# AWS AMBDA
+# AWS IAM Users
+
+#list s3 buckets
+aws s3 ls
+
+#list EC2 Instance 
+aws ec2 descibe-instances
+
+#list lambda
+aws lambda list-functions
+
+#list IAM Users
+aws iam list-users
+
+###############
+((((((((please note the above commands can be found out through aws cli documentation page))))))))
+
+- then press wq! to save the script
+- then execute the script by putting in permissions for the script, this can be achieved by chmod 777 aws_resource_tracker.sh
+
+-then put in ./aws_resource_tracker.sh | more
+
+
+###############
+Writing the list in a more improvised way
+
+#!/bin/bash
+
+#################################
+# Author: Priyojit
+# Date: 12th june
+#
+# Version:v1
+#
+# this script will report the aws resource usage
+#################################
+
+set -x 
+
+# AWS S3
+# AWS EC2
+# AWS AMBDA
+# AWS IAM Users
+
+#list s3 buckets
+echo "Print list of S3 Buckets"
+aws s3 ls
+
+#list EC2 Instance 
+echo "Print list of E"
+aws ec2 describe-instances
+
+#list lambda
+echo "Print list of lambda functions"
+aws lambda list-functions
+
+#list IAM Users
+echo "Print list of IAM Users"
+aws iam list-users
+
+###############
+to bring the debug mode we can use "set -x" command as shown in the above script
+
+Note- the output that the script returns is in a json format. jq command is used to read through a json file and yq command is used to read through a yaml file. jq - json parser and yq- is yaml parser
+
+the following command "aws ec2 describe-instances" can be modified to print only rhe instance id. Example command aws ec2 describe-instances |jq '.Reservations[].Instances[].InstanceID'
+
+-the above modified command can be used in place of aws ec2 describe-instances in the above script.
+
+-the above script can also be set to pipe into a text file which can be acheived by putting in > resourcetracker at the end of the command for eg. aws ec2 describe-instances > resourcetracker
+
+
+
+########################
+S3 EVENT TRIGGERING - PROJECT https://awstip.com/aws-s3-event-triggering-shell-script-used-by-netflix-airbnb-adobe-expedia-and-others-53b6822e2192
+https://www.youtube.com/watch?v=ZOGeOmla5Sw&list=PLdpzxOOAlwvIKMhk8WhzN1pYoJ1YU8Csa&index=8
+########################
+
+Each time a new video/series/documentary is uploaded in S3 Storage Bucket, you receive a notification. Most organizations use S3 since it is cost-efficient.
+
+Netflix: Netflix use S3 event triggering to automatically process video files uploaded to Amazon S3, enabling seamless content ingestion and processing.
+
+Airbnb: This lodging and homestays aggregator use S3 event triggering to automatically process and analyze data stored in Amazon S3, such as guest reviews and booking information.
+
+Expedia: They use S3 event triggering to automatically process and analyze data stored in Amazon S3, such as travel bookings, user profiles, and pricing information, to power their personalized travel recommendations and search features.
+
+pROJECT LINK - https://github.com/iam-veeramalla/shell-scripting-projects/tree/main
+
+
+
+
+
+
+
+
+
+							
+</p>
+							
+							
 						</div>
 					</div>
 
